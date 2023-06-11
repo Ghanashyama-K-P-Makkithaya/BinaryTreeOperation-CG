@@ -1,10 +1,12 @@
 #include <glut.h>
 #include <stdio.h>
+#include <process.h>
+// #include <unistd.h>
 
 void front();
 void keyboard(unsigned char, int, int);
 void button();
-void println(float, float, void *, char[]);
+void println(float, float, void *, char*);
 void about();
 void help();
 void binarytree();
@@ -14,7 +16,7 @@ int n;
 
 
 //Function to print characters on screen.
-void println(float x, float y, void *font, char str[]) {
+void println(float x, float y, void *font, char* str) {
   glRasterPos2f(x, y);
   for (int i = 0; str[i] != '\0'; i++) {
     glutBitmapCharacter(font, str[i]);
@@ -67,8 +69,9 @@ void keyboard(unsigned char keys, int x, int y) {
   } 
   if(keys=='3')
   {
-    glutDisplayFunc(front);
-    glutPostRedisplay();
+    // glutDisplayFunc(front);
+    // glutPostRedisplay();
+    execl("./traverse.exe", "./traverse", NULL);
   } 
   if(keys=='4')
   {
@@ -87,15 +90,15 @@ void binarytree(){
   glClearColor(0.8, 0.8, 1.0, 1.0);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glColor3f(0.0f, 0.0f, 0.0f);
-  println(140.0, 360.0, GLUT_BITMAP_TIMES_ROMAN_24,"WELCOME TO BINARY TREE OPERATIONS"); 
+  println(140.0, 360.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"WELCOME TO BINARY TREE OPERATIONS"); 
  
-  println(160.0, 300.0, GLUT_BITMAP_HELVETICA_18,"1.Algorithm"); 
+  println(160.0, 300.0, GLUT_BITMAP_HELVETICA_18,(char*)"1.Algorithm"); 
  glutKeyboardFunc(keyboard);
- println(160.0, 280.0, GLUT_BITMAP_HELVETICA_18,"2.Flow Chart"); 
+ println(160.0, 280.0, GLUT_BITMAP_HELVETICA_18,(char*)"2.Flow Chart"); 
   glutKeyboardFunc(keyboard);
- println(160.0, 260.0, GLUT_BITMAP_HELVETICA_18,"3.Binary Tree Operations"); 
+ println(160.0, 260.0, GLUT_BITMAP_HELVETICA_18,(char*)"3.Binary Tree Operations"); 
   glutKeyboardFunc(keyboard);
-  println(160.0, 240.0, GLUT_BITMAP_HELVETICA_18,"4.Back "); 
+  println(160.0, 240.0, GLUT_BITMAP_HELVETICA_18,(char*)"4.Back "); 
   glutKeyboardFunc(keyboard);
   glFlush();
   glutPostRedisplay();
@@ -119,48 +122,48 @@ void front() {
  glEnd();
   glLoadIdentity();
   glColor3f(0, 0, 0);
-  println(140.0, 370.0, GLUT_BITMAP_TIMES_ROMAN_24," *    SDM INSTITUTE OF TECHNOLOGY    *");
+  println(140.0, 370.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)" *    SDM INSTITUTE OF TECHNOLOGY    *");
 
   glColor3f(0.7, 0, 0);
-  println(113.0, 350.0, GLUT_BITMAP_TIMES_ROMAN_24,"DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
+  println(113.0, 350.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING");
 
   glColor3f(1, 0.5, 0);
-  println(113.0, 330.0,GLUT_BITMAP_TIMES_ROMAN_24,"COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT ");
+  println(113.0, 330.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"COMPUTER GRAPHICS LABORATORY WITH MINI PROJECT ");
 
   glColor3f(1, 0, 0);
-  println(170.0, 260.0, GLUT_BITMAP_TIMES_ROMAN_24, "A MINI PROJECT ON");
+  println(170.0, 260.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*) "A MINI PROJECT ON");
 
   glColor3f(0.5, 0.5, 0.0);
-  println(160.0, 240.0, GLUT_BITMAP_TIMES_ROMAN_24,"BINARY TREE OPERATIONS");
+  println(160.0, 240.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"BINARY TREE OPERATIONS");
 
   glColor3f(1.0, 0.0, 0.0);
-  println(25.0, 120.0, GLUT_BITMAP_TIMES_ROMAN_24, "BY:");
-  println(25.0, 120.0,GLUT_BITMAP_TIMES_ROMAN_24, "__");
+  println(25.0, 120.0, GLUT_BITMAP_TIMES_ROMAN_24, (char*)"BY:");
+  println(25.0, 120.0,GLUT_BITMAP_TIMES_ROMAN_24, (char*)"__");
 
   glColor3f(0.7, 0.0, 1.0);
-  println(25.0, 100.0,GLUT_BITMAP_TIMES_ROMAN_24,"CHARAN K (4SU20CS020)");
+  println(25.0, 100.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"CHARAN K (4SU20CS020)");
 
   glColor3f(0.7, 0.0, 1.0);
-  println(25.0, 80.0,GLUT_BITMAP_TIMES_ROMAN_24,"DARSHAN C S (4SU20CS022)");
+  println(25.0, 80.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"DARSHAN C S (4SU20CS022)");
 
   glColor3f(0.7, 0.0, 1.0);
-  println(25.0, 60.0, GLUT_BITMAP_TIMES_ROMAN_24,"G S DEEPAK PATIL (4SU20CS030)");
+  println(25.0, 60.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"G S DEEPAK PATIL (4SU20CS030)");
 
   glColor3f(0.7, 0.0, 1.0);
-  println(25.0, 40.0, GLUT_BITMAP_TIMES_ROMAN_24,"GHANASHYAMA K P MAKKITTHAYA (4SU20CS031)");
+  println(25.0, 40.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"GHANASHYAMA K P MAKKITTHAYA (4SU20CS031)");
 
   glColor3f(1.0, 0.0, 0.0);
-  println(320.0, 120.0,GLUT_BITMAP_TIMES_ROMAN_24, "GUIDE:");
-  println(320.0, 120.0,GLUT_BITMAP_TIMES_ROMAN_24, "______");
+  println(320.0, 120.0,GLUT_BITMAP_TIMES_ROMAN_24, (char*)"GUIDE:");
+  println(320.0, 120.0,GLUT_BITMAP_TIMES_ROMAN_24, (char*)"______");
 
   glColor3f(0.7, 0.0, 1.0);
-  println(300.0, 100.0,GLUT_BITMAP_TIMES_ROMAN_24,"DR.RAGHAVENDRA PATEL G E");
-  println(300.0, 80.0,GLUT_BITMAP_TIMES_ROMAN_24,"ASSISTANT PROFESSOR");
-  println(300.0, 60.0,GLUT_BITMAP_TIMES_ROMAN_24,"DEPT OF CSE");
+  println(300.0, 100.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"DR.RAGHAVENDRA PATEL G E");
+  println(300.0, 80.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"ASSISTANT PROFESSOR");
+  println(300.0, 60.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"DEPT OF CSE");
 
 
   glColor3f(0.0, 0.5, 0.0);
- println(160.0,210.0,GLUT_BITMAP_TIMES_ROMAN_24,"PRESS ENTER TO CONTINUE");
+ println(160.0,210.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"PRESS ENTER TO CONTINUE");
   //glColor3f(0.0,0.0,0.0);
   //println(160.0,180.0,GLUT_BITMAP_TIMES_ROMAN_24,"PRESS BACKSPACE TO EXIT");
   glutKeyboardFunc(keyboard);
@@ -174,19 +177,19 @@ void button() {
   glClearColor(0.8, 0.8, 1.0, 1.0);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glColor3f(1.0f, 0.0f, 0.0f);
-  println(180.0,350.0,GLUT_BITMAP_TIMES_ROMAN_24,"MENU PAGE");
+  println(180.0,350.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"MENU PAGE");
   glColor3f(0.0f, 0.0f, 0.0f);
-  println(180.0, 290.0, GLUT_BITMAP_TIMES_ROMAN_24," MENU : PRESS M");
+  println(180.0, 290.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)" MENU : PRESS M");
    glutKeyboardFunc(keyboard);
-  println(180.0,270.0,GLUT_BITMAP_TIMES_ROMAN_24,"ABOUT: PRESS A");
+  println(180.0,270.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"ABOUT: PRESS A");
   glutKeyboardFunc(keyboard);
-   println(180.0,250.0,GLUT_BITMAP_TIMES_ROMAN_24," HELP : PRESS H");
+   println(180.0,250.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)" HELP : PRESS H");
    glutKeyboardFunc(keyboard);
-   println(180.0,230.0,GLUT_BITMAP_TIMES_ROMAN_24," BACK : PRESS B");
+   println(180.0,230.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)" BACK : PRESS B");
   glutKeyboardFunc(keyboard);
-  println(160.0,310.0,GLUT_BITMAP_TIMES_ROMAN_24,"Binary Tree Operations: PRESS Q");
+  println(160.0,310.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)"Binary Tree Operations: PRESS Q");
   glutKeyboardFunc(keyboard);
-  println(180.0,210.0,GLUT_BITMAP_TIMES_ROMAN_24," EXIT : PRESS E");
+  println(180.0,210.0,GLUT_BITMAP_TIMES_ROMAN_24,(char*)" EXIT : PRESS E");
   glutKeyboardFunc(keyboard);
   glFlush();
   glutPostRedisplay();
@@ -197,33 +200,33 @@ void about() {
   glClearColor(1.0, 1.0, 0.0, 1.0);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glColor3f(1.0f, 0.0f, 0.0f);
-  println(185.0, 360.0, GLUT_BITMAP_TIMES_ROMAN_24,"ABOUT US");
-  println(30.0, 320.0, GLUT_BITMAP_TIMES_ROMAN_24,"CHARAN K");
+  println(185.0, 360.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"ABOUT US");
+  println(30.0, 320.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"CHARAN K");
   glColor3f(1.0f, 0.0f, 1.0f);
-  println(30.0, 305.0, GLUT_BITMAP_HELVETICA_18,"USN: 4SU20CS020");
-  println(30.0, 290.0, GLUT_BITMAP_HELVETICA_18,"III year, Dept of CSE");
-  println(30.0, 275.0, GLUT_BITMAP_HELVETICA_18,"Address: Near Shuddh Hani Factory, Madanthayar,574224");
+  println(30.0, 305.0, GLUT_BITMAP_HELVETICA_18,(char*)"USN: 4SU20CS020");
+  println(30.0, 290.0, GLUT_BITMAP_HELVETICA_18,(char*)"III year, Dept of CSE");
+  println(30.0, 275.0, GLUT_BITMAP_HELVETICA_18,(char*)"Address: Near Shuddh Hani Factory, Madanthayar,574224");
 
   glColor3f(1.0f, 0.0f, 0.0f);
-  println(230.0, 320.0, GLUT_BITMAP_TIMES_ROMAN_24,"DARSHAN C S");
+  println(230.0, 320.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"DARSHAN C S");
   glColor3f(1.0f, 0.0f, 1.0f);
-  println(230.0, 305.0, GLUT_BITMAP_HELVETICA_18,"USN: 4SU20CS022");
-  println(230.0, 290.0, GLUT_BITMAP_HELVETICA_18,"III year, Dept of CSE");
-  println(230.0, 275.0, GLUT_BITMAP_HELVETICA_18,"Address: Govt. Highschool(opp) Sannaysikodamagge,Shivamogga,577243");
+  println(230.0, 305.0, GLUT_BITMAP_HELVETICA_18,(char*)"USN: 4SU20CS022");
+  println(230.0, 290.0, GLUT_BITMAP_HELVETICA_18,(char*)"III year, Dept of CSE");
+  println(230.0, 275.0, GLUT_BITMAP_HELVETICA_18,(char*)"Address: Govt. Highschool(opp) Sannaysikodamagge,Shivamogga,577243");
 
   glColor3f(1.0f, 0.0f, 0.0f);
-  println(30.0, 225.0, GLUT_BITMAP_TIMES_ROMAN_24,"G S DEEPAK PATIL");
+  println(30.0, 225.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"G S DEEPAK PATIL");
   glColor3f(1.0f, 0.0f, 1.0f);
-  println(30.0, 210.0, GLUT_BITMAP_HELVETICA_18,"USN: 4SU20CS030");
-  println(30.0, 195.0, GLUT_BITMAP_HELVETICA_18,"III year, Dept of CSE");
-  println(30.0, 180.0, GLUT_BITMAP_HELVETICA_18,"Address:Near Anjinaya Swami Temple, Devareddy Halli, Challakere,577529 ");
+  println(30.0, 210.0, GLUT_BITMAP_HELVETICA_18,(char*)"USN: 4SU20CS030");
+  println(30.0, 195.0, GLUT_BITMAP_HELVETICA_18,(char*)"III year, Dept of CSE");
+  println(30.0, 180.0, GLUT_BITMAP_HELVETICA_18,(char*)"Address:Near Anjinaya Swami Temple, Devareddy Halli, Challakere,577529 ");
 
   glColor3f(1.0f, 0.0f, 0.0f);
-  println(230.0, 225.0, GLUT_BITMAP_TIMES_ROMAN_24,"GHANASHYAMA K P MAKKITTHAYA");
+  println(230.0, 225.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"GHANASHYAMA K P MAKKITTHAYA");
   glColor3f(1.0f, 0.0f, 1.0f);
-  println(230.0, 210.0, GLUT_BITMAP_HELVETICA_18,"USN: 4SU20CS031");
-  println(230.0, 195.0, GLUT_BITMAP_HELVETICA_18,"III year, Dept of CSE");
-  println(230.0, 180.0, GLUT_BITMAP_HELVETICA_18,"Address: Ist Cross Gundibailu, Kunjibettu, Udupi,576102");
+  println(230.0, 210.0, GLUT_BITMAP_HELVETICA_18,(char*)"USN: 4SU20CS031");
+  println(230.0, 195.0, GLUT_BITMAP_HELVETICA_18,(char*)"III year, Dept of CSE");
+  println(230.0, 180.0, GLUT_BITMAP_HELVETICA_18,(char*)"Address: Ist Cross Gundibailu, Kunjibettu, Udupi,576102");
   
   glutKeyboardFunc(keyboard);
   glFlush();
@@ -238,7 +241,7 @@ void help() {
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glColor3f(0.0f, 0.0f, 0.0f);
   
-  println(185.0, 360.0, GLUT_BITMAP_TIMES_ROMAN_24,"HELP ");
+  println(185.0, 360.0, GLUT_BITMAP_TIMES_ROMAN_24,(char*)"HELP ");
 
   
   glutKeyboardFunc(keyboard);
