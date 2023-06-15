@@ -1,9 +1,9 @@
-
-#include<stdlib.h>
-#include<windows.h>
-#include<glut.h>
-#include<stdio.h>
-#include<math.h>
+#include <process.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <glut.h>
+#include <stdio.h>
+#include <math.h>
 #define pi 3.141592
 #define size 512
 typedef struct
@@ -324,7 +324,7 @@ int FindPosition(int i)
 		//eqflag=0;
 		printf("equal");
 		//break;
-		//glutPostRedisplay();
+		// glutPostRedisplay();
 		//continue;
 		//return 0;
 		}
@@ -603,8 +603,10 @@ void Keyboard(unsigned char key, int x, int y)
 	enterno += 1;
 	switch (key)
 	{
-		case 'e' || 'E':
-			exit(0);
+		case 'e':
+		case 'E':
+			execl("./part1.exe", "./part1", NULL);
+			break;
 	case 'c':glutPostRedisplay();
 		break;
 	case '0':a[n].data[count++] = '0';
