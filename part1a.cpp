@@ -1,6 +1,6 @@
 #include <glut.h>
 #include <stdio.h>
-
+#include <process.h>
 void front();
 void keyboard(unsigned char, int, int);
 void button();
@@ -71,8 +71,9 @@ void keyboard(unsigned char keys, int x, int y) {
   } 
   if(keys=='3')
   {
-    glutDisplayFunc(front);
-    glutPostRedisplay();
+    // glutDisplayFunc(front);
+    // glutPostRedisplay();
+    execl("./traverse.exe", "./traverse", NULL);
   } 
   if(keys=='4')
   {
