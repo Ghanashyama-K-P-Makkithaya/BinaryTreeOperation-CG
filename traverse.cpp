@@ -125,8 +125,8 @@ void inorder()
 			break;
 	}
 	printf("STACK ELEMNTS FOR IN ORDER \t : ");
-for(j=0;j<temp;j++)
-	printf("%s",a[p[j]].data);
+	for(j=0;j<temp;j++)
+		printf("%s",a[p[j]].data);
 }
 void postorder()
 {
@@ -161,8 +161,8 @@ void postorder()
 		s[top].flag = -1;
 	}
 	printf("STACK ELEMNTS FOR post ORDER \t : ");
-for(j=0;j<temp;j++)
-	printf("%s",a[p[j]].data);
+	for(j=0;j<temp;j++)
+		printf("%s",a[p[j]].data);
 }
 void menu(GLenum mode)
 {
@@ -287,20 +287,6 @@ void processHits(GLuint hits, GLuint buffer[])
 		ex = 1;
 	}
 }
-// void title()	 // to draw the starting screen
-// {
-// 	printf("IN title Func \n\n\n");
-// 	drawstring(5.0, 30.0, (char*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 6);
-// 	drawstring(5.0, 28.0, (char*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 6);
-// 	drawstring(5.0, 26.0, (char*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~TREE TRAVERSAL TECHINQUES~~~~~~~~~~~~~~~~~~~~~~~~~~", 6);
-// 	drawstring(5.0, 24.0, (char*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 6);
-// 	drawstring(5.0, 22.0, (char*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 6);
-	
-// 	drawstring(20.0, 10.0, (char*)"SUBMITTED   BY", 0);
-// 	drawstring(20.0, 8.0, (char*)"NAME: V R ROHITH", 0);
-// 	drawstring(2.0, 2.0, (char*)"*  *LEFT CLICK THE MOUSE TO CONTINUE*  *", 3);
-// 	glFlush();
-// }
 
 void drawedge(int root, int i, int c)
 {
@@ -492,7 +478,7 @@ void display()
 			if (!eflag)
 			{
 				drawstring(2, 5, s5, 2);
-				preorder();
+				postorder();
 				for (i = 0; i<n; i++)
 				{
 					drawbox(l, m, w, p[i], 3);
