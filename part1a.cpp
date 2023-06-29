@@ -1,3 +1,5 @@
+#include<stdlib.h>
+#include<math.h>
 #include <glut.h>
 #include <stdio.h>
 #include <process.h>
@@ -23,7 +25,24 @@ void println(float x, float y, void *font, char str[]) {
     glutBitmapCharacter(font, str[i]);
   }
 }
+void drawCircle (float cx, float cy, float radius)
+	{
+	
+    int numSegments = 100;
+    glBegin(GL_LINE_LOOP);
+    for (int i = 0; i < numSegments; i++)
+	{
+        float theta = 2.0f * 3.1415926f * float(i) / float(numSegments);
+        float px = radius * cos(theta);
+        float py = radius * sin(theta);
+        glVertex2f(cx + px, cy + py);
+    }
+    glEnd();
+	
+	glutKeyboardFunc(keyboard);
+glFlush();
 
+}
 void keyboard(unsigned char keys, int x, int y) {
 
  //for menu page
@@ -157,7 +176,7 @@ void front() {
 
   glColor3f(1.0, 0.0, 0.0);
   println(320.0, 120.0,GLUT_BITMAP_TIMES_ROMAN_24, "GUIDE:");
-  println(320.0, 120.0,GLUT_BITMAP_TIMES_ROMAN_24, "______");
+  println(320.0, 120.0,GLUT_BITMAP_TIMES_ROMAN_24, "__");
 
   glColor3f(0.7, 0.0, 1.0);
   println(300.0, 100.0,GLUT_BITMAP_TIMES_ROMAN_24,"DR.RAGHAVENDRA PATEL G E");
@@ -172,6 +191,7 @@ void front() {
   glutKeyboardFunc(keyboard);
   glFlush();
   glutPostRedisplay();
+
 }
 
 
@@ -239,16 +259,18 @@ void about() {
 
 void flowchart()
 {
-	glClearColor(0.5, 0.5, 0.5, 1.0);
+
+  glClearColor(0.5, 0.5, 0.5, 1.0);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  glColor3f(0.8f, 0.6f, 0.7f);
+  glColor3f(0.0f, 0.0f, 0.0f);
   
   println(185.0, 360.0, GLUT_BITMAP_TIMES_ROMAN_24,"FLOWCHART ");
   draw_line(180,358,230,358);
 
-  glColor3f(1.0f, 0.0f, 0.0f);
-  draw_poly(185.0,320.0,225.0,340.0);
+  glColor3f(1.0f, 1.0f, 0.0f);
+   drawCircle(205.0,335,14);
   println(195.0, 328.0, GLUT_BITMAP_TIMES_ROMAN_24,"BEGIN ");
+  
   draw_line(205,320,205,300);
   draw_tri(208,304,202,304,205,300);
   println(213.0, 308.0, GLUT_BITMAP_TIMES_ROMAN_24,"Press 'ENTER' ");
@@ -288,12 +310,14 @@ void flowchart()
 
 
   glColor3f(1.0f, 1.0f, 1.0f);
-  draw_poly(185.0,80.0,225.0,100.0);
+ // draw_poly(185.0,80.0,225.0,100.0);
   println(195.0, 88.0, GLUT_BITMAP_TIMES_ROMAN_24," END");
-
+  //drawCircle(220,455,15);
+    drawCircle(203.0,86.5,13);
   glutKeyboardFunc(keyboard);
   glFlush();
-  glutPostRedisplay();
+  
+
 
 }
 
@@ -375,7 +399,7 @@ void algo()
 
 int main(int argc, char **argv) {
   glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+  glutInitDisplayMode(GLUT_SINGLE| GLUT_RGB);
   glutInitWindowSize(1500, 600);
   glutInitWindowPosition(0,0);
   glutCreateWindow("Binary Tree Operations");
