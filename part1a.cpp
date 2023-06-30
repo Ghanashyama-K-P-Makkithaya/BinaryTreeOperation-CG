@@ -206,7 +206,7 @@ void button() {
    glutKeyboardFunc(keyboard);
   println(180.0,270.0,GLUT_BITMAP_TIMES_ROMAN_24,"ABOUT: PRESS A");
   glutKeyboardFunc(keyboard);
-   println(180.0,250.0,GLUT_BITMAP_TIMES_ROMAN_24," HELP : PRESS H");
+   println(180.0,250.0,GLUT_BITMAP_TIMES_ROMAN_24," INFO : PRESS H");
    glutKeyboardFunc(keyboard);
    println(180.0,230.0,GLUT_BITMAP_TIMES_ROMAN_24," BACK : PRESS B");
   glutKeyboardFunc(keyboard);
@@ -359,60 +359,61 @@ void info()
   glColor3f(0.0f, 0.0f, 0.0f);
   draw_line(180, 355, 200, 355);
   glColor3f(0.0f, 0.0f, 0.5f);
-  println(40.0, 340.0, GLUT_BITMAP_TIMES_ROMAN_24, "A binary tree is a hierarchical data structure composed of nodes, where each node has at most two children: a left child and a right child. The topmost node is called the root. ");
+  println(40.0, 340.0, GLUT_BITMAP_TIMES_ROMAN_24, "A binary tree is a hierarchical data structure composed of nodes, where each node has at most two children: a left child and a right child.");
+  println(40.0, 320.0, GLUT_BITMAP_TIMES_ROMAN_24, "The topmost node is called the root. ");
 
-  println(40.0, 320.0, GLUT_BITMAP_TIMES_ROMAN_24, "Binary trees are widely used in computer science and have various operations associated with them.The main operations on a binary tree include -->");
+  println(40.0, 300.0, GLUT_BITMAP_TIMES_ROMAN_24, "Binary trees are widely used in computer science and have various operations associated with them.The main operations on a binary tree include -->");
   glColor3f(0.0f, 0.5f, 0.0f);
-  println(185.0, 300.0, GLUT_BITMAP_TIMES_ROMAN_24, "1. Insertion");
-  println(185.0, 280.0, GLUT_BITMAP_TIMES_ROMAN_24, "2. Deletion");
-  println(185.0, 260.0, GLUT_BITMAP_TIMES_ROMAN_24, "3. Search");
-  println(185.0, 240.0, GLUT_BITMAP_TIMES_ROMAN_24, "4. Traversals");
+  println(185.0, 280.0, GLUT_BITMAP_TIMES_ROMAN_24, "1. Insertion");
+  println(185.0, 260.0, GLUT_BITMAP_TIMES_ROMAN_24, "2. Deletion");
+  println(185.0, 240.0, GLUT_BITMAP_TIMES_ROMAN_24, "3. Search");
+  println(185.0, 220.0, GLUT_BITMAP_TIMES_ROMAN_24, "4. Traversals");
 
   glColor3f(1.0f, 0.0f, 0.0f);
-  println(40.0, 220.0, GLUT_BITMAP_TIMES_ROMAN_24, "Insertion");
+  println(40.0, 200.0, GLUT_BITMAP_TIMES_ROMAN_24, "Insertion");
   glColor3f(0.0f, 0.0f, 0.5f);
-  println(60.0, 220.0, GLUT_BITMAP_TIMES_ROMAN_24, "involves adding a new node to the tree in the appropriate position, considering the ordering property of the tree.");
+  println(64.0, 200.0, GLUT_BITMAP_TIMES_ROMAN_24, "involves adding a new node to the tree in the appropriate position, considering the ordering property of the tree.");
 
   glColor3f(1.0f, 0.0f, 0.0f);
-  println(40.0, 200.0, GLUT_BITMAP_TIMES_ROMAN_24, "Deletion");
+  println(40.0, 180.0, GLUT_BITMAP_TIMES_ROMAN_24, "Deletion");
   glColor3f(0.0f, 0.0f, 0.5f);
-  println(58.0, 200.0, GLUT_BITMAP_TIMES_ROMAN_24, "removes a specific node from the tree while maintaining the binary tree structure.");
+  println(64.0, 180.0, GLUT_BITMAP_TIMES_ROMAN_24, "removes a specific node from the tree while maintaining the binary tree structure.");
 
   glColor3f(1.0f, 0.0f, 0.0f);
-  println(40.0, 180.0, GLUT_BITMAP_TIMES_ROMAN_24, "Search");
+  println(40.0, 160.0, GLUT_BITMAP_TIMES_ROMAN_24, "Search");
   glColor3f(0.0f, 0.0f, 0.5f);
-  println(55.0, 180.0, GLUT_BITMAP_TIMES_ROMAN_24, "allows for finding a particular node based on its value.");
+  println(60.0, 160.0, GLUT_BITMAP_TIMES_ROMAN_24, "allows for finding a particular node based on its value.");
 
   glColor3f(1.0f, 0.0f, 0.0f);
-  println(40.0, 160.0, GLUT_BITMAP_TIMES_ROMAN_24, "Traversal");
+  println(40.0, 140.0, GLUT_BITMAP_TIMES_ROMAN_24, "Traversal");
   glColor3f(0.0f, 0.0f, 0.5f);
-  println(60.0, 160.0, GLUT_BITMAP_TIMES_ROMAN_24, "is the process of visiting all the nodes in the tree. There are different traversal methods, such as in-order, pre-order, and post-order.");
+  println(64.0, 140.0, GLUT_BITMAP_TIMES_ROMAN_24, "is the process of visiting all the nodes in the tree. There are different traversal methods, such as in-order, pre-order, and post-order.");
 
   glColor3f(0.0f, 0.0f, 0.0f);
-  println(48.0, 144.0, GLUT_BITMAP_HELVETICA_18, "*");
+  println(48.0, 124.0, GLUT_BITMAP_HELVETICA_18, "*");
 
   glColor3f(0.5f, 0.0f, 0.0f);
-  println(50.0, 145.0, GLUT_BITMAP_HELVETICA_18, "In-order traversal visits the left subtree, then the current node, and finally the right subtree.");
+  println(50.0, 125.0, GLUT_BITMAP_HELVETICA_18, "In-order traversal visits the left subtree, then the current node, and finally the right subtree.");
 
   glColor3f(0.0f, 0.0f, 0.0f);
-  println(48.0, 129.0, GLUT_BITMAP_HELVETICA_18, "*");
+  println(48.0, 109.0, GLUT_BITMAP_HELVETICA_18, "*");
 
   glColor3f(0.5f, 0.0f, 0.0f);
-  println(50.0, 130.0, GLUT_BITMAP_HELVETICA_18, "Pre-order traversal visits the current node, then the left subtree, and finally the right subtree.");
+  println(50.0, 110.0, GLUT_BITMAP_HELVETICA_18, "Pre-order traversal visits the current node, then the left subtree, and finally the right subtree.");
   glColor3f(0.0f, 0.0f, 0.0f);
-  println(48.0, 114.0, GLUT_BITMAP_HELVETICA_18, "*");
+  println(48.0, 94.0, GLUT_BITMAP_HELVETICA_18, "*");
 
   glColor3f(0.5f, 0.0f, 0.0f);
-  println(50.0, 115.0, GLUT_BITMAP_HELVETICA_18, "Post-order traversal visits the left subtree, then the right subtree, and finally the current node.");
+  println(50.0, 95.0, GLUT_BITMAP_HELVETICA_18, "Post-order traversal visits the left subtree, then the right subtree, and finally the current node.");
 
   glColor3f(0.0f, 0.0f, 0.5f);
-  println(55.0, 95.0, GLUT_BITMAP_TIMES_ROMAN_24, "Overall, binary trees provide a flexible and efficient way to organize data, making them a fundamental structure in computer science. Their operations enable efficient");
+  println(55.0, 75.0, GLUT_BITMAP_TIMES_ROMAN_24, "Overall, binary trees provide a flexible and efficient way to organize data, making them a fundamental structure in computer science.");
 
   glColor3f(0.0f, 0.0f, 0.5f);
-  println(40.0, 75.0, GLUT_BITMAP_TIMES_ROMAN_24, "manipulation and retrieval of information, making them indispensable for a wide range of applications.");
+  println(40.0, 55.0, GLUT_BITMAP_TIMES_ROMAN_24, " Their operations enable efficient manipulation and retrieval of information, making them indispensable for a wide range of applications.");
 
   glColor3f(0.0f, 0.0f, 0.0f);
-  println(340.0, 45.0, GLUT_BITMAP_TIMES_ROMAN_24, "Press M for MENU ");
+  println(340.0, 25.0, GLUT_BITMAP_TIMES_ROMAN_24, "Press M for MENU ");
 
   glutKeyboardFunc(keyboard);
   glFlush();

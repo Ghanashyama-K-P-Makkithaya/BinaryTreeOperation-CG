@@ -41,7 +41,7 @@ void drawWindow(int x1, int y1, int x2, int y2)
 {
 	printf("IN drawWindow Func\n");
 	glColor3f(0.5f, 0.0f, 1.0f);
-	drawstring(9.0, 27.0,(char*)"TREE TRAVERSAL TECHINQUES", 1);
+	drawstring(9.0, 27.0,(char*)"TREE TRAVERSAL TECHNIQUES", 1);
 	
 	glLineWidth(3);
 	glBegin(GL_LINE_LOOP);
@@ -137,8 +137,8 @@ void postorder()
 	};
 	int cur = 0, j = 0, top = -1,temp;
 	struct stack s[20];
-	top++;
-	for (;;)
+	// top++;
+	while (1)
 	{
 		while (cur != -1)
 		{
