@@ -269,7 +269,7 @@ void flowchart()
 
   glColor3f(1.0f, 1.0f, 0.0f);
    drawCircle(205.0,335,14);
-  println(195.0, 328.0, GLUT_BITMAP_TIMES_ROMAN_24,"BEGIN ");
+  println(195.0, 328.0, GLUT_BITMAP_TIMES_ROMAN_24,"START ");
   
   draw_line(205,320,205,300);
   draw_tri(208,304,202,304,205,300);
@@ -311,7 +311,7 @@ void flowchart()
 
   glColor3f(1.0f, 1.0f, 1.0f);
  // draw_poly(185.0,80.0,225.0,100.0);
-  println(195.0, 88.0, GLUT_BITMAP_TIMES_ROMAN_24," END");
+  println(195.0, 88.0, GLUT_BITMAP_TIMES_ROMAN_24," STOP");
   //drawCircle(220,455,15);
     drawCircle(203.0,86.5,13);
   glutKeyboardFunc(keyboard);

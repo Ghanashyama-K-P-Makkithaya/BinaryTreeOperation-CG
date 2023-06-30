@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 #define pi 3.141592
-#define size 512
+#define size 512                          
 typedef struct
 {
 	char data[5];
@@ -209,7 +209,7 @@ void menu(GLenum mode)
 	if (mode == GL_SELECT)
 		glLoadName(5);
 	glRecti(25, 9, 29, 11);
-	drawstring(26, 10, (char*)"EXIT", 2);
+	drawstring(26, 10, (char*)"STOP", 2);
 	
 }
 void drawbox(float x, float y, float w, int key, int c)
